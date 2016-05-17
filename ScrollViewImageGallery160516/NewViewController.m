@@ -19,25 +19,23 @@
 @implementation NewViewController
 
 -(void)viewDidLoad{
-    
+
     [super viewDidLoad];
     if (self.scrollImage){
-    [self.scrollImage setContentMode:UIViewContentModeScaleAspectFill];
-    [self.secondScrollView addSubview:self.scrollImage];
-    self.scrollImage.frame = CGRectMake(0, 0, self.scrollImage.frame.size.width, self.scrollImage.frame.size.height);
-    
-    
-    self.secondScrollView.contentSize = CGSizeMake(self.scrollImage.bounds.size.width, MAX (MAX(self.scrollImage.bounds.size.height, self.scrollImage.bounds.size.height), self.scrollImage.bounds.size.height));
+        [self.scrollImage setContentMode:UIViewContentModeScaleAspectFill];
+        [self.secondScrollView addSubview:self.scrollImage];
+        self.scrollImage.frame = CGRectMake(0, 0, self.scrollImage.frame.size.width, self.scrollImage.frame.size.height);
+
+
+        self.secondScrollView.contentSize = CGSizeMake(self.scrollImage.bounds.size.width, MAX (MAX(self.scrollImage.bounds.size.height, self.scrollImage.bounds.size.height), self.scrollImage.bounds.size.height));
 
     }
-    
+
 }
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-    
+
     return self.scrollImage;
 }
-
-
 
 @end
